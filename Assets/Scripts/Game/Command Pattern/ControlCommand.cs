@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveCommand : ICommand {
+public class ControlCommand : ICommand {
     private GameObject player = GameManager.instance.playerObj;
     private Vector2 direction;
     private bool focusing;
+    private bool shooting;
     
-    public MoveCommand( Frame frame ) {
-        this.direction = frame.moveDirection;
-        this.focusing = frame.isFocusing;
+    public ControlCommand( Frame frame ) {
+        direction = frame.moveDirection;
+        focusing = frame.isFocusing;
+        shooting = frame.isShooting;
     }
 
     void ICommand.Execute() {
@@ -20,10 +22,11 @@ public class MoveCommand : ICommand {
             speed = baseSpeed;
         }
 
-        // read shoot
-        // read bomb
-
         // change position based on vector
         player.transform.Translate( direction * speed * Time.deltaTime );
+
+        if ( shooting ) {
+            GameManager.instance.PlayerShoot();
+        }
     }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1419873465493890860}
   m_Layer: 0
   m_Name: DropBomb
-  m_TagString: Untagged
+  m_TagString: DropBomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : Collidable {
     protected override void OnCollide( Collider2D collider ) {
-        if ( collider.name == "Player" ) {
+        if ( collider.gameObject.CompareTag( "Player" ) ) {
             OnHit();
         }
     }

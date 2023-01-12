@@ -18,18 +18,20 @@ public class Collectable : Collidable {
     // behavior on collection
     protected virtual void OnCollect() {
         GameManager.instance.score += scoreIncrease;
-        switch ( gameObject.name ) {
+        switch ( gameObject.tag ) {
             case "DropPower":
-            // increase player shooting power
-            break;
+                if ( GameManager.instance.power <= 2 ) {
+                    GameManager.instance.UpgradePlayer();
+                }
+                break;
             case "DropBomb":
-            GameManager.instance.bombs += 1;
-            break;
+                GameManager.instance.bombs += 1;
+                break;
             case "DropLife":
-            GameManager.instance.lives += 1;
-            break;
+                GameManager.instance.lives += 1;
+                break;
             default:
-            break;
+                break;
         }
 
         Destroy( gameObject );

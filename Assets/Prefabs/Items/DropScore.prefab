@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4377923103570143374}
   m_Layer: 0
   m_Name: DropScore
-  m_TagString: Untagged
+  m_TagString: DropScore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -34,7 +34,7 @@ public class CommandManager : MonoBehaviour {
 
     private void FixedUpdate() {
         if ( replayBuffer.Count > 0 && HelperManager.instance.Replaying == true && GameManager.instance.dead == false ) {
-            ICommand replayMovement = new MoveCommand( replayBuffer.Dequeue() );
+            ICommand replayMovement = new ControlCommand( replayBuffer.Dequeue() );
             replayMovement.Execute();
         }
     }

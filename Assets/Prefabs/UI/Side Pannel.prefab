@@ -33,6 +33,7 @@ RectTransform:
   - {fileID: 4772752527139215151}
   - {fileID: 2248536866518070677}
   - {fileID: 5713731840290455822}
+  - {fileID: 268067654156862359}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -79,6 +80,86 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &3843013858208415746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 268067654156862359}
+  - component: {fileID: 7567821163533282034}
+  - component: {fileID: 5880661329452853645}
+  m_Layer: 5
+  m_Name: ReplayStatus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &268067654156862359
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3843013858208415746}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.4999999, y: 1.4999999, z: 1.4999999}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 2715066492159639991}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 65, y: -147}
+  m_SizeDelta: {x: 45, y: 20}
+  m_Pivot: {x: 1, y: 1}
+--- !u!222 &7567821163533282034
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3843013858208415746}
+  m_CullTransparentMesh: 1
+--- !u!114 &5880661329452853645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3843013858208415746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.754717, g: 0, b: 0.20246398, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 1
+    m_BestFit: 1
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 5
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Replay
 --- !u!1001 &250487751983323743
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -86,6 +167,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2715066492159639991}
     m_Modifications:
+    - target: {fileID: 2797918297413490183, guid: 0175b5178d9924b488703b4fc75a5944, type: 3}
+      propertyPath: m_Name
+      value: ScoreValue
+      objectReference: {fileID: 0}
+    - target: {fileID: 2797918297586301886, guid: 0175b5178d9924b488703b4fc75a5944, type: 3}
+      propertyPath: m_Name
+      value: ScoreText
+      objectReference: {fileID: 0}
     - target: {fileID: 3380127701877409666, guid: 0175b5178d9924b488703b4fc75a5944, type: 3}
       propertyPath: m_Name
       value: Score
@@ -194,7 +283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2797918297413490183, guid: 0175b5178d9924b488703b4fc75a5944, type: 3}
       propertyPath: m_Name
-      value: Life Value
+      value: LifeValue
       objectReference: {fileID: 0}
     - target: {fileID: 2797918297586301880, guid: 0175b5178d9924b488703b4fc75a5944, type: 3}
       propertyPath: m_Text
@@ -202,7 +291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2797918297586301886, guid: 0175b5178d9924b488703b4fc75a5944, type: 3}
       propertyPath: m_Name
-      value: Life Text
+      value: LifeText
       objectReference: {fileID: 0}
     - target: {fileID: 2797918297586301887, guid: 0175b5178d9924b488703b4fc75a5944, type: 3}
       propertyPath: m_SizeDelta.x
@@ -328,7 +417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2797918297413490183, guid: 0175b5178d9924b488703b4fc75a5944, type: 3}
       propertyPath: m_Name
-      value: Bomb Value
+      value: BombValue
       objectReference: {fileID: 0}
     - target: {fileID: 2797918297586301880, guid: 0175b5178d9924b488703b4fc75a5944, type: 3}
       propertyPath: m_Text
@@ -336,7 +425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2797918297586301886, guid: 0175b5178d9924b488703b4fc75a5944, type: 3}
       propertyPath: m_Name
-      value: Bomb Text
+      value: BombText
       objectReference: {fileID: 0}
     - target: {fileID: 2797918297586301887, guid: 0175b5178d9924b488703b4fc75a5944, type: 3}
       propertyPath: m_SizeDelta.x

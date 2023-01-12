@@ -13,6 +13,10 @@ public class GameManager : MonoBehaviour {
         }
 
         instance = this;
+
+        if ( HelperManager.instance.Replaying ) {
+            replayStatus.gameObject.SetActive( true );
+        }
         //DontDestroyOnLoad( gameObject );
     }
 
@@ -22,12 +26,16 @@ public class GameManager : MonoBehaviour {
     public Text scoreValue;
     public Text bombsValue;
     public Text livesValue;
+    
+    public Text replayStatus;
 
     public int score;
+    public int power;
     public int bombs;
     public int lives;
 
     public int baseSpeed;
+    public int delay;
 
     public bool dead;
 
@@ -35,10 +43,23 @@ public class GameManager : MonoBehaviour {
         scoreValue.text = score.ToString() + "00";
         bombsValue.text = bombs.ToString();
         livesValue.text = lives.ToString();
+        delay++;
+    }
+
+    public void UpgradePlayer() {
+        power++;
+        player.Upgrade( power );
     }
 
     public void KillPlayer() {
+        lives -= 1;
+        power = 0;
+        player.Upgrade( power );
         player.Die();
+    }
+
+    public void PlayerShoot() {
+        player.Shoot();
     }
 
     public void EndGame() {
