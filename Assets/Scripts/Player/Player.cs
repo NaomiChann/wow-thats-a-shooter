@@ -18,7 +18,7 @@ public class Player : MonoBehaviour {
 
     Cannon[] cannons;
 
-    private void Start() {
+    private void Awake() {
         plrCollider = GetComponent< CircleCollider2D >();
         plrRenderer = GetComponent< SpriteRenderer >();
         inputReader = GetComponent< InputReader >();
@@ -85,7 +85,9 @@ public class Player : MonoBehaviour {
     }
 
     private IEnumerator Respawn() {
-        yield return new WaitForSeconds( 1f );
+        for ( int i = 0; i < 30; i++ ) {
+            yield return new WaitForFixedUpdate();
+        }
         transform.position = spawnPoint;
         plrRenderer.enabled = true;
         plrCollider.enabled = true;

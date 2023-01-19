@@ -6,7 +6,7 @@ public class Cannon : MonoBehaviour {
     public BulletPlayer bullet;
     Vector2 direction;
 
-    private void Start() {
+    private void Awake() {
         direction = ( transform.localRotation * Vector2.up ).normalized;
     }
     

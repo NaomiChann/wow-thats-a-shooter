@@ -45,10 +45,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  drop: {fileID: 5328675587849203079, guid: 1e6df89d644dde34589c367ed23b6669, type: 3}
+  drop2: {fileID: 4377923103570143409, guid: 7bfa663be06a16c4a9950ef6253a8c08, type: 3}
   playerObj: {fileID: 0}
   scoreValue: {fileID: 0}
   bombsValue: {fileID: 0}
   livesValue: {fileID: 0}
+  replayStatus: {fileID: 0}
   score: 0
   power: 0
   bombs: 3

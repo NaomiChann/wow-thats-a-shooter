@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour {
     }
 
     public Player player;
+    public GameObject drop;
+    public GameObject drop2;
     public GameObject playerObj;
 
     public Text scoreValue;
@@ -28,6 +30,8 @@ public class GameManager : MonoBehaviour {
     public Text livesValue;
     
     public Text replayStatus;
+
+    public Text[] inputs;
 
     public int score;
     public int power;
@@ -39,11 +43,22 @@ public class GameManager : MonoBehaviour {
 
     public bool dead;
 
-    private void Update() {
+    private void FixedUpdate() {
         scoreValue.text = score.ToString() + "00";
         bombsValue.text = bombs.ToString();
         livesValue.text = lives.ToString();
         delay++;
+
+    }
+
+    private void Update() {
+        if( Input.GetKeyDown( KeyCode.X ) ) {
+            EndGame();
+        }
+
+        if ( HelperManager.instance.Replaying == true && Input.GetKeyDown( KeyCode.R ) ) {
+            HelperManager.instance.Replaying = false;
+        }
     }
 
     public void UpgradePlayer() {

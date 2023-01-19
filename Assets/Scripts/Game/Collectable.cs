@@ -40,6 +40,6 @@ public class Collectable : Collidable {
     private void FixedUpdate() {
         speed -= 0.1f;
         speed = Mathf.Clamp( speed, -5, 5 );
-        transform.Translate( fall * speed * Time.deltaTime );
+        transform.Translate( fall * speed * Time.fixedDeltaTime );
     }
 }

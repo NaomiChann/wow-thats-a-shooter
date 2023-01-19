@@ -12,7 +12,7 @@ public class Recorder : MonoBehaviour {
         recordingQueue = new Queue< ICommand >();
     }
 
-    private void Update() {
+    private void FixedUpdate() {
         if ( Input.GetKeyDown( KeyCode.R ) ){
             StartReplay();
         }
