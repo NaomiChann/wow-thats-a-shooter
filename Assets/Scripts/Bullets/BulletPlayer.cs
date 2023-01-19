@@ -9,6 +9,7 @@ public class BulletPlayer : Collidable {
 
     private void Awake() {
         Destroy( gameObject, 1 );
+        Random.InitState( 1337 );
         drop = Random.Range( 0, 3 );
     }
 

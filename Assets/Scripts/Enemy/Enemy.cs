@@ -6,10 +6,11 @@ public class Enemy : MonoBehaviour {
     public Bullet bullet;
     Player target;
     bool delay = true;
-    Vector2 direction;
+    private float speed = 5;
+    private float center;
 
     private void Awake() {
-        direction = transform.position;
+        center = transform.position.y;
     }
 
     private void FixedUpdate() {
@@ -18,10 +19,19 @@ public class Enemy : MonoBehaviour {
             StartCoroutine( ShootInterval() );
         }
 
-        if ( transform.position.x >= 4 || transform.position.x <= -4 ) {
-            direction = direction * -1;
+        Vector2 pos = transform.position;
+
+        if ( pos.x >= 2 || pos.x <= -5 ) {
+            speed = -speed;
         }
-        transform.Translate( direction * Time.fixedDeltaTime );
+
+        pos.x += speed * Time.fixedDeltaTime;
+
+        float sin = Mathf.Sin( pos.x / 1.5f );
+        
+        pos.y = center + sin;
+
+        transform.position = pos;
     }
     
     public void Shoot() {
